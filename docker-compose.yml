@@ -1,0 +1,43 @@
+version: '3.8'
+
+services: 
+  db:
+    image: mysql
+    expose: 
+      - "3306"
+    ports: 
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: paulo123
+      MYSQL_ROOT_HOST: localhost
+
+  backend:
+    container_name: backend-container
+    restart: always
+    build: ./backend_client
+    links:
+      - "db:db"
+    expose: 
+      - "8085"
+    ports: 
+      - "8085:8085"
+    depends_on: 
+      - db
+  client:
+    container_name: web-container
+    restart: always
+    build: ./web_client
+    expose: 
+      - "8080"
+    ports: 
+      - "8080:8080"
+    depends_on: 
+      - backend
+  
+   
+   
+
+
+
