@@ -2,7 +2,7 @@
 web application with a telephony web-service
 
 
-Technologie
+Technologies
 
 Vue.js 
 Node
@@ -10,6 +10,8 @@ Docker
 Python 3.6
 Mysql
 Pyst2
+
+Launch
 
 To run the application
 docker-compose build
