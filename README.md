@@ -14,4 +14,5 @@ Pyst2
 To run the application
 docker-compose build
 docker-compose up -d client
+Navigate to localhost:8081
 
